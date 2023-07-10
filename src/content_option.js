@@ -1,7 +1,7 @@
 const logotext = "ETIENNE";
 const meta = {
     title: "Etienne Rousseau",
-    description: "I’m Etienne Rousseau, a fullstack developer based out of San Fransisco",
+    description: "I’m Etienne Rousseau, a fullstack developer based out of San Fransisco Bay Area",
 };
 
 const introdata = {
@@ -11,134 +11,58 @@ const introdata = {
         second: "I am a student at UC Davis",
         third: "I develop apps",
     },
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum",
-    your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+    description: "I am a current second year student at UC Davis, interested in software development, machine learning, and programming ",
 };
 
 const dataabout = {
-    title: "abit about my self",
-    aboutme: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies.",
+    title: "About myself",
+    aboutme: "Hi! My name is Etienne Rousseau. I was born and raised in the Bay Area, and since high school I have developed a passion for coding. I first began by creaitng personal websites for friends, and started working with others on small projects. I then further developed my software skills through work experience learing important skills in React, Python, and C++ and personal projects where I have learned more about machine learning. As a current second year student at UC Davis studying Computer Science, I have further developed my love for programming and problem solving. "
 };
-const worktimeline = [{
-        jobtitle: "Designer of week",
-        where: "YAdfi",
-        date: "2020",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "Jamalya",
-        date: "2019",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "ALquds",
-        date: "2019",
-    },
-];
-
 const skills = [{
         name: "Python",
-        value: 90,
+        value: 100,
     },
     {
-        name: "Djano",
+        name: "Java",
+        value: 95,
+    },
+    {
+        name: "C++",
         value: 85,
-    },
-    {
-        name: "Javascript",
-        value: 80,
     },
     {
         name: "React",
-        value: 60,
+        value: 100,
     },
     {
-        name: "Jquery",
-        value: 85,
+        name: "C#",
+        value: 75,
     },
 ];
 
 const services = [{
-        title: "UI & UX Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
+        title: "Pampa Technologies: June 2022 - September 2023",
+        description: "Developed a website to manage waste servieces for Chevron, utilizing AngularJS, C#, and Azure Devops connecting server side information onto an easy to display website. Redesigined a web application to allow easier access of information on robots and creating access of this inofmrmation online. Utilzied REactJS and Python to connect to cloud servers",
     },
     {
-        title: "Mobile Apps",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Wordpress Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
+        title: "Code Lab: January 2023 - June 2023",
+        description: "",
     },
 ];
 
-const dataportfolio = [{
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/800/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/550/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-];
+const projects = [{
+    title: "Pampa Technologies",
+    description: "Created multiple full stack applications using ReactJS, Angular, Javascript, C#, Python, and SQL, learning about the process of putting multiple sides of development into one fluid piece",
+},
+{
+    title: "Code Lab",
+    description: "Utilized Chat GPT API to learn more about the process behind artificial intillgence and machine learnign",
+}];
 
 const contactConfig = {
-    YOUR_EMAIL: "name@domain.com",
-    YOUR_FONE: "(555)123-4567",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
+    YOUR_EMAIL: "erousseau@ucdavis.edu",
+    YOUR_FONE: "(510)298-2864",
+    description: "Please feel free to conact me at erousseau@ucdavis.edu or through my linkedin or phone number. Always willing to chat!",
     // creat an emailjs.com account 
     // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
     YOUR_SERVICE_ID: "service_id",
@@ -147,19 +71,17 @@ const contactConfig = {
 };
 
 const socialprofils = {
-    github: "https://github.com",
-    facebook: "https://facebook.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    github: "https://github.com/EtienneRousseau1",
+    facebook: "https://www.facebook.com/etienne.rousseau.75/",
+    linkedin: "https://www.linkedin.com/in/etienne-rousseau-2392811a0/",
 };
 export {
     meta,
     dataabout,
-    dataportfolio,
-    worktimeline,
     skills,
     services,
     introdata,
+    projects,
     contactConfig,
     socialprofils,
     logotext,
