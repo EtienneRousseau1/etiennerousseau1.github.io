@@ -71,7 +71,7 @@ const projects = [{
 const contactConfig = {
     YOUR_EMAIL: "erousseau@ucdavis.edu",
     YOUR_FONE: "(510)298-2864",
-    description: "Please feel free to conact me at erousseau@ucdavis.edu or through my linkedin or phone number. Always willing to chat!",
+    description: "Please feel free to contact me at erousseau@ucdavis.edu or through my linkedin or phone number. Always willing to chat!",
     // creat an emailjs.com account 
     // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
     YOUR_SERVICE_ID: "service_id",
