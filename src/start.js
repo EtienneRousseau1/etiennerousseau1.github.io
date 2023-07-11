@@ -7,7 +7,7 @@ const StartPage = () => {
     <div className="start-page">
       <div className="container">
         <h1 className="name">Etienne Rousseau</h1>
-        <p className="introduction">Web Developer &amp; Designer</p>
+        <p className="introduction">Developer</p>
         <div className="social-links">
           <a href="https://www.linkedin.com/in/etienne-rousseau" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin"></i>
