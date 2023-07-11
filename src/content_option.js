@@ -16,7 +16,7 @@ const introdata = {
 
 const dataabout = {
     title: "About myself",
-    aboutme: "Hi! My name is Etienne Rousseau. I was born and raised in the Bay Area, and since high school I have developed a passion for coding. I first began by creaitng personal websites for friends, and started working with others on small projects. I then further developed my software skills through work experience learing important skills in React, Python, and C++ and personal projects where I have learned more about machine learning. As a current second year student at UC Davis studying Computer Science, I have further developed my love for programming and problem solving. "
+    aboutme: "Hi! My name is Etienne Rousseau. I was born and raised in the Bay Area, and since high school I have developed a passion for coding. I first began by creaitng personal websites for friends, and started working with others on small projects. I then further developed my software skills through work experience learing important skills in React, Python, and C++ and personal projects where I have learned more about machine learning. As a current second year student at UC Davis studying Computer Science, I have further developed my love for programming and problem solving. In my free time I enjoy hanging out with my friends, working out, and playing with my dog"
 };
 const skills = [{
         name: "Python",
@@ -42,21 +42,30 @@ const skills = [{
 
 const services = [{
         title: "Pampa Technologies: June 2022 - September 2023",
-        description: "Developed a website to manage waste servieces for Chevron, utilizing AngularJS, C#, and Azure Devops connecting server side information onto an easy to display website. Redesigined a web application to allow easier access of information on robots and creating access of this inofmrmation online. Utilzied REactJS and Python to connect to cloud servers",
+        description1: "Developed a website to manage waste servieces for Chevron, utilizing AngularJS, C#, and Azure Devops connecting server side information onto an easy to display website",
+        description2: "Redesigined a web application to allow easier access of information on robots and creating access of this inofmrmation online. Utilzied ReactJS and Python to connect the robots to cloud servers"
     },
     {
         title: "Code Lab: January 2023 - June 2023",
-        description: "",
+        description1: "Creating an app with a team of developers and designers to help UC Davis students better deal with mental health and anxiety alongside having uplifting messages and a space for students to input their moods",
+        description2: "Used ReactJS, Express, and MongoDB to gather user data and create an interactive UI for students to organize their thoughts and accomplishments made throughout the day",
     },
 ];
 
 const projects = [{
-    title: "Pampa Technologies",
-    description: "Created multiple full stack applications using ReactJS, Angular, Javascript, C#, Python, and SQL, learning about the process of putting multiple sides of development into one fluid piece",
+    title: "SMAILY July 2023 - August 2023",
+    description1: "Simple AI application using Chat GPT's API",
+    description2: "Accessible at github.com/EtienneRousseau1"
 },
 {
-    title: "Code Lab",
-    description: "Utilized Chat GPT API to learn more about the process behind artificial intillgence and machine learnign",
+    title: "Personal Website April 2023",
+    description1: "Created a personal website detailing my work experience, and information about myself utilzing ReactJS",
+    description2: "Accessible at github.com/EtienneRousseau1"
+},
+{
+    title: "The Storyboard Intiative April 2022 - June 2022",
+    description1: "Created a website that allowed for high school students to learn more about the business world and the importance of financial literacy. Done utilzing javascript",
+    description2: "Accessible at https://tsbini.com/"
 }];
 
 const contactConfig = {

@@ -6,6 +6,7 @@ import {
   dataabout,
   meta,
 } from "../../content_option";
+import IMG_2172 from "../../images/IMG_2172.jpg" 
 
 export const About = () => {
   return (
@@ -18,8 +19,9 @@ export const About = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4">About me</h1>
+            <h1 className="display-4 mb-4">About me!</h1>
             <hr className="t_border my-4 ml-0 text-left" />
+           
           </Col>
         </Row>
         <Row className="sec_sp">
@@ -28,11 +30,11 @@ export const About = () => {
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <div>
-              <p>{dataabout.aboutme}</p>
+              <p style = {{fontSize: "20px"}}>{dataabout.aboutme}</p>
             </div>
           </Col>
         </Row>
-        
+
       </Container>
     </HelmetProvider>
   );
