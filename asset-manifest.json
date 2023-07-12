@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/website/static/css/main.69f94d5b.css",
+    "main.js": "/website/static/js/main.14b26963.js",
+    "static/media/IMG_2172.jpg": "/website/static/media/IMG_2172.203ff3550b53a70a17e2.jpg",
+    "static/media/EtienneResume.pdf": "/website/static/media/EtienneResume.6afcc1388b7b34d913c7.pdf",
+    "index.html": "/website/index.html",
+    "main.69f94d5b.css.map": "/website/static/css/main.69f94d5b.css.map",
+    "main.14b26963.js.map": "/website/static/js/main.14b26963.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69f94d5b.css",
+    "static/js/main.14b26963.js"
+  ]
+}
