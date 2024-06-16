@@ -16,7 +16,7 @@ const introdata = {
 
 const dataabout = {
     title: "About myself",
-    aboutme: "Hi! My name is Etienne Rousseau. I was born and raised in the Bay Area, and since high school I have developed a passion for coding. I first began by creaitng personal websites for friends, and started working with others on small projects. I then further developed my software skills through work experience learing important skills in React, Python, and C++ and personal projects where I have learned more about machine learning. As a current third year student at UC Davis studying Computer Science, I have further developed my love for programming and problem solving. In my free time I enjoy hanging out with my friends, working out, and playing with my dog"
+    aboutme: "Hi! My name is Etienne Rousseau. I was born and raised in the Bay Area, and since high school I have developed a passion for coding. I first began by creating personal websites for friends, and started working with others on small projects. I then further developed my software skills through work experience learing important skills in React, Python, and C++ and personal projects where I have learned more about machine learning. As a current third year student at UC Davis studying Computer Science, I have further developed my love for programming and problem solving. In my free time I enjoy hanging out with my friends, working out, and playing with my dog"
 };
 const skills = [{
         name: "Python",
