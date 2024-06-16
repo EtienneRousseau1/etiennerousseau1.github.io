@@ -3,8 +3,7 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta, services, projects } from "../../content_option";
-import resumeFile from "../../images/EtienneResume.pdf"
-
+import resumeFile from "../../images/EtienneRousseauFinalResumecopy.pdf"
 export const Portfolio = () => {
   return (
     <HelmetProvider>
@@ -35,6 +34,9 @@ export const Portfolio = () => {
                   <h5 className="service__title">{data.title}</h5>
                   <p className="service_desc">{data.description1}</p>
                   <p className="service_desc">{data.description2}</p>
+                  <p className="service_desc">{data.description3}</p>
+                  <p className="service_desc">{data.description4}</p>
+                  <p className="service_desc">{data.description5}</p>
                 </div>
               );
             })}
@@ -51,6 +53,8 @@ export const Portfolio = () => {
                   <h5 className="service__title">{data.title}</h5>
                   <p className="service_desc">{data.description1}</p>
                   <p className="service_desc">{data.description2}</p>
+                  <p className="service_desc">{data.description3}</p>     
+                  <p className="service_desc">{data.description4}</p>
                 </div>
               );
             })}
