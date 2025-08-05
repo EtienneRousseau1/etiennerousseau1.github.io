@@ -3,7 +3,7 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta, services, projects } from "../../content_option";
-import resumeFile from "../../images/EtienneRousseauFinalResumecopy.pdf"
+import resumeFile from "../../images/EtienneRousseauFinalResume.pdf"
 export const Portfolio = () => {
   return (
     <HelmetProvider>
