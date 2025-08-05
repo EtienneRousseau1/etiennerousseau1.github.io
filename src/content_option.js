@@ -11,7 +11,7 @@ const introdata = {
         second: "I am a student at UC Davis",
         third: "I develop apps",
     },
-    description: "I am a current third year student at UC Davis, interested in software development, machine learning, and programming ",
+    description: "I am a current fourth  year student at UC Davis, interested in software development, machine learning, and programming ",
 };
 
 const dataabout = {
@@ -40,6 +40,22 @@ const skills = [{
     },
 ];const services = [
     {
+        title: "Software Engineer Intern - Cloud Services: June 2024 - September 2024, HashiCorp, San Francisco, CA",
+        description1: "Transformed an existing open source diagnostics tool for HashiCorp products into a comprehensive library in Go",
+        description2: "Implemented multiple output formats for diagnostics data, improving usability and accessibility for support teams",
+        description3: "Improved the latency of the core algorithm by approximately 27% for diagnostics generation reports",
+        description4: "Worked with 5 engineers to create a Request for Comments (RFC), ensuring alignment and thorough documentation of the project's objectives and processes",
+        description5: "Coordinated with 4 product support teams to ensure the final solution effectively addressed diverse requirements"
+    },
+    {
+        title: "Software Engineer Intern: June 2024 - September 2024, Tesla, Fremont, CA",
+        description1: "Spearheading the development of a Database-as-a-Service (DBaaS) platform to streamline provisioning for over 10,000 on-prem databases and virtual machines, reducing request time from days to under 10 minutes",
+        description2: "Built a metadata microservice using FastAPI and MongoDB to define over 50+ schema and object templates, enabling dynamic integration with downstream workflows and supporting microservice-based orchestration",
+        description3: "Launched a cluster identifier tool to determine primary or secondary status reducing process time by 98.6% in Go",
+        description4: "Implemented a topology management system to enable real-time visualization and editing of 3000 hosts across PostgreSQL, Redis, and MongoDB systems, ensuring seamless interaction with distributed databases",
+        description5: "Built and hosted a query-by-example tool using Go and Linux to improve database visibility and query efficiency"
+    },
+    {
         title: "Software Engineering Intern: June 2023 - September 2023, Pampa Technologies, Fremont, CA",
         description1: "Engineered a dynamic web application enabling real-time monitoring of automated guided vehicles (AGVs) through Python and React, interfacing with PLC boards to retrieve live data streams.",
         description2: "Empowered streamlined operations by implementing remote restart and servicing functionalities for up to 50 AGVs simultaneously, revolutionizing maintenance protocols and ensuring optimal fleet performance.",
@@ -49,7 +65,7 @@ const skills = [{
     },
     {
         title: "Developer: September 2023 - May 2024, Codelab, Davis, CA",
-        description1: "Led a cross-functional team of seven in designing and developing a comprehensive dashboard, showcasing diverse users’ aggregate and resilience scores.",
+        description1: "Led a cross-functional team of seven in designing and developing a comprehensive dashboard, showcasing diverse users' aggregate and resilience scores.",
         description2: "Gathered the metrics from five APIs, employing advanced algorithms within a Next.js, MongoDB, and Express stack to derive aggregate and resilience scores, providing valuable insights into user engagement with live content.",
         description3: "Created a full-stack application utilizing FastAPI, Next.js, and MySQL, enabling potential investors to access comprehensive company metrics such as funding details and industry affiliations.",
         description4: "Implemented seamless Google Authentication functionality, enhancing user experience by providing secure login capabilities, with differentiated access levels based on user roles."
