@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.69f94d5b.css",
-    "main.js": "/static/js/main.6545bbdd.js",
+    "main.js": "/static/js/main.994f4fb7.js",
     "static/media/IMG_2172.jpg": "/static/media/IMG_2172.203ff3550b53a70a17e2.jpg",
     "static/media/EtienneRousseauFinalResume.pdf": "/static/media/EtienneRousseauFinalResume.acd372a18414266ba109.pdf",
     "index.html": "/index.html",
     "main.69f94d5b.css.map": "/static/css/main.69f94d5b.css.map",
-    "main.6545bbdd.js.map": "/static/js/main.6545bbdd.js.map"
+    "main.994f4fb7.js.map": "/static/js/main.994f4fb7.js.map"
   },
   "entrypoints": [
     "static/css/main.69f94d5b.css",
-    "static/js/main.6545bbdd.js"
+    "static/js/main.994f4fb7.js"
   ]
 }
