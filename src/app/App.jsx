@@ -6,7 +6,11 @@ import "../styles/base.css";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // Block body: a concise arrow would return scrollTo's value, which React
+  // then treats as a cleanup function and throws on.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 }
 

@@ -17,7 +17,9 @@ export default function Header() {
   const { pathname } = useLocation();
 
   // Navigating is the signal that the menu has served its purpose.
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   // A menu that traps you behind Escape is a menu people get stuck in.
   useEffect(() => {
