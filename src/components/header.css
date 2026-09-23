@@ -57,12 +57,37 @@
   background-color: var(--accent);
 }
 
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-right: calc(var(--space-3) * -1);
+}
+
+.header__theme {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.header__theme:hover {
+  background-color: var(--surface-raised);
+  color: var(--text);
+}
+
 .header__toggle {
   display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
-  margin-right: calc(var(--space-3) * -1);
   border: 0;
   background: none;
   cursor: pointer;
