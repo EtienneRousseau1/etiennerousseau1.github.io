@@ -5,7 +5,7 @@ import {
   FaFacebookF,
   FaLinkedin,
 } from "react-icons/fa";
-import { socialprofils } from "../content_option";
+import { socialprofils } from "../content";
 
 export const Socialicons = (params) => {
   return (
