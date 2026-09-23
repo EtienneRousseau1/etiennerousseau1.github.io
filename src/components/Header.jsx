@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { FiMoon, FiSun } from "react-icons/fi";
 import { logotext } from "../content";
+import { useTheme } from "../hooks/useTheme";
 import "./header.css";
 
 const links = [
@@ -17,6 +19,7 @@ const DESKTOP = "(min-width: 48rem)";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const { theme, toggle } = useTheme();
 
   // Navigating is the signal that the menu has served its purpose.
   useEffect(() => {
@@ -71,22 +74,41 @@ export default function Header() {
             ))}
           </nav>
 
-          <button
-            type="button"
-            className="header__toggle"
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span
-              className={`header__bars ${open ? "is-open" : ""}`}
-              aria-hidden="true"
+          <div className="header__actions">
+            <button
+              type="button"
+              className="header__theme"
+              onClick={toggle}
+              aria-label={
+                theme === "dark"
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
             >
-              <span />
-              <span />
-            </span>
-          </button>
+              {theme === "dark" ? (
+                <FiSun aria-hidden="true" />
+              ) : (
+                <FiMoon aria-hidden="true" />
+              )}
+            </button>
+
+            <button
+              type="button"
+              className="header__toggle"
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((value) => !value)}
+            >
+              <span
+                className={`header__bars ${open ? "is-open" : ""}`}
+                aria-hidden="true"
+              >
+                <span />
+                <span />
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 
