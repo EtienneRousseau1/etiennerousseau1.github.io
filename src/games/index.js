@@ -4,7 +4,7 @@ export const games = [
     name: "Minefield",
     tagline: "Minesweeper, inverted.",
     description:
-      "One mine is hidden in the grid. Take turns tapping tiles — every safe tile is a survival, and whoever finds the mine drinks.",
+      "Pick your board and how many mines to bury in it. Take turns tapping tiles: every safe tile is a survival, and whoever finds a mine drinks.",
     players: "2+ players",
   },
 ];

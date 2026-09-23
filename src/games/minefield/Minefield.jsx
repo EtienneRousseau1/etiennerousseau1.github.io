@@ -1,6 +1,6 @@
 import React from "react";
-import { FiCheck, FiRefreshCw } from "react-icons/fi";
-import { useMinefield, SIZES } from "./useMinefield";
+import { FiCheck, FiRefreshCw, FiSettings } from "react-icons/fi";
+import { useMinefield, SIZES, mineOptions } from "./useMinefield";
 import "./minefield.css";
 
 const MESSAGES = {
@@ -13,14 +13,73 @@ export default function Minefield() {
   const {
     grid,
     changeGrid,
-    mine,
+    mineCount,
+    setMineCount,
+    mines,
     revealed,
     status,
     turn,
     safeFound,
+    safeTotal,
+    start,
     reveal,
     reset,
+    backToSetup,
   } = useMinefield(3);
+
+  if (status === "setup") {
+    return (
+      <div className="minefield">
+        <div className="setup">
+          <div className="setup__field">
+            <p className="setup__label" id="grid-label">
+              Board
+            </p>
+            <div className="chips" role="group" aria-labelledby="grid-label">
+              {SIZES.map((size) => (
+                <button
+                  key={size.grid}
+                  type="button"
+                  className="chip"
+                  aria-pressed={grid === size.grid}
+                  onClick={() => changeGrid(size.grid)}
+                >
+                  {size.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="setup__field">
+            <p className="setup__label" id="mines-label">
+              Mines
+            </p>
+            <div className="chips" role="group" aria-labelledby="mines-label">
+              {mineOptions(grid).map((count) => (
+                <button
+                  key={count}
+                  type="button"
+                  className="chip"
+                  aria-pressed={mineCount === count}
+                  onClick={() => setMineCount(count)}
+                >
+                  {count}
+                </button>
+              ))}
+            </div>
+            <p className="setup__hint">
+              {mineCount} mine{mineCount === 1 ? "" : "s"} hidden among{" "}
+              {grid * grid} tiles, leaving {safeTotal} safe.
+            </p>
+          </div>
+
+          <button type="button" className="btn btn--primary" onClick={start}>
+            Start round
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const over = status !== "playing";
   const tiles = Array.from({ length: grid * grid }, (_, index) => index);
@@ -28,28 +87,20 @@ export default function Minefield() {
   return (
     <div className="minefield">
       <div className="minefield__bar">
-        <div
-          className="minefield__sizes"
-          role="group"
-          aria-label="Grid size"
-        >
-          {SIZES.map((size) => (
-            <button
-              key={size.grid}
-              type="button"
-              className="minefield__size"
-              aria-pressed={grid === size.grid}
-              onClick={() => changeGrid(size.grid)}
-            >
-              {size.label}
-            </button>
-          ))}
-        </div>
+        <p className="minefield__setting">
+          {grid} × {grid} · {mineCount} mine{mineCount === 1 ? "" : "s"}
+        </p>
 
-        <button type="button" className="btn btn--secondary" onClick={reset}>
-          <FiRefreshCw aria-hidden="true" />
-          New round
-        </button>
+        <div className="minefield__buttons">
+          <button type="button" className="btn btn--secondary" onClick={backToSetup}>
+            <FiSettings aria-hidden="true" />
+            Setup
+          </button>
+          <button type="button" className="btn btn--secondary" onClick={reset}>
+            <FiRefreshCw aria-hidden="true" />
+            New round
+          </button>
+        </div>
       </div>
 
       <p
@@ -62,12 +113,12 @@ export default function Minefield() {
       <div
         className="minefield__grid"
         style={{ "--grid": grid }}
-        aria-label={`Minefield, ${grid} by ${grid}`}
+        aria-label={`Minefield, ${grid} by ${grid}, ${mineCount} mines`}
       >
         {tiles.map((index) => {
           const isRevealed = revealed.includes(index);
-          const isMine = index === mine;
-          // Once the round is over the mine is shown even if nobody hit it.
+          const isMine = mines.includes(index);
+          // Once the round is over every mine is shown, hit or not.
           const showMine = isMine && (isRevealed || over);
 
           return (
@@ -101,7 +152,8 @@ export default function Minefield() {
       </div>
 
       <p className="minefield__count">
-        {safeFound} safe {safeFound === 1 ? "tile" : "tiles"} found
+        {safeFound} of {safeTotal} safe {safeTotal === 1 ? "tile" : "tiles"}{" "}
+        found
       </p>
     </div>
   );
