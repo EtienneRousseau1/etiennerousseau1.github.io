@@ -1,53 +1,48 @@
 import React from "react";
-import "./style.css";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import { intro, meta } from "../../content";
 import { Link } from "react-router-dom";
-import IMG_2172 from "../../images/IMG_2172.jpg";
+import { Helmet } from "react-helmet-async";
+import { intro, meta, resumeUrl, roles } from "../../content";
+import portrait from "../../images/portrait.jpg";
+import "./home.css";
 
 export const Home = () => {
+  const current = roles.find((role) => role.current);
+
   return (
-    <HelmetProvider>
-      <section id="home" className="home">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>{meta.title}</title>
-          <meta name="description" content={meta.description} />
-        </Helmet>
-        <div className="intro_sec d-block d-lg-flex align-items-center ">
-          <div
-            className="h_bg-image order-1 order-lg-2 h-100 "
-            style={{ backgroundImage: `url(${IMG_2172})` }}
-          ></div>
-          <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
-            <div className="align-self-center ">
-              <div className="intro mx-auto">
-                <h2 className="mb-1x">{intro.name}</h2>
-                <h1 className="fluidz-48 mb-1x">{intro.tagline}</h1>
-                <p className="mb-1x">{intro.description}</p>
-                <div className="intro_btn-action pb-5">
-                  <Link to="/experience" className="text_2">
-                    <div id="button_p" className="ac_btn btn ">
-                      Experience
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                  <Link to="/contact">
-                    <div id="button_h" className="ac_btn btn">
-                      Contact Me
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="container page hero">
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+      </Helmet>
+
+      <div className="hero__text">
+        {current && (
+          <p className="eyebrow">
+            {current.title} · {current.company}
+          </p>
+        )}
+        <h1 className="hero__name">{intro.name}</h1>
+        <p className="hero__tagline">{intro.tagline}</p>
+        <p className="hero__description">{intro.description}</p>
+
+        <div className="hero__actions">
+          <Link className="btn btn--primary" to="/work">
+            View my work
+          </Link>
+          <a
+            className="btn btn--secondary"
+            href={resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Resume
+          </a>
         </div>
-      </section>
-    </HelmetProvider>
+      </div>
+
+      <div className="hero__portrait">
+        <img src={portrait} alt="Etienne Rousseau" width="640" height="640" />
+      </div>
+    </div>
   );
 };

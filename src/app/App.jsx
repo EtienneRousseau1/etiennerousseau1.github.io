@@ -1,30 +1,26 @@
 import React, { useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  BrowserRouter as Router,
-  useLocation,
-} from "react-router-dom";
-import withRouter from "../hooks/withRouter";
+import { BrowserRouter, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import AppRoutes from "./routes";
-import Headermain from "../header";
-import "./App.css";
+import "../styles/base.css";
 
-function _ScrollToTop(props) {
+function ScrollToTop() {
   const { pathname } = useLocation();
+  // Block body: a concise arrow would return scrollTo's value, which React
+  // then treats as a cleanup function and throws on.
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  return props.children;
+  return null;
 }
-const ScrollToTop = withRouter(_ScrollToTop);
 
 export default function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <ScrollToTop>
-        <Headermain />
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
         <AppRoutes />
-      </ScrollToTop>
-    </Router>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }

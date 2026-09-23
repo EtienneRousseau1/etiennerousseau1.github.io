@@ -1,0 +1,87 @@
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { logotext } from "../content";
+import "./header.css";
+
+const links = [
+  { to: "/", label: "Home", end: true },
+  { to: "/work", label: "Work" },
+  { to: "/projects", label: "Projects" },
+  { to: "/games", label: "Games" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+];
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // Navigating is the signal that the menu has served its purpose.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // A menu that traps you behind Escape is a menu people get stuck in.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  // Stop the page scrolling underneath the open overlay.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header className="header">
+      <div className="container header__inner">
+        <Link className="header__brand" to="/">
+          {logotext}
+        </Link>
+
+        <nav className="header__nav" aria-label="Main">
+          {links.map((link) => (
+            <NavLink key={link.to} to={link.to} end={link.end}>
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <button
+          type="button"
+          className="header__toggle"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span className={`header__bars ${open ? "is-open" : ""}`} aria-hidden="true">
+            <span />
+            <span />
+          </span>
+        </button>
+      </div>
+
+      <div
+        id="mobile-nav"
+        className={`header__mobile ${open ? "is-open" : ""}`}
+        hidden={!open}
+      >
+        <nav className="container header__mobile-nav" aria-label="Mobile">
+          {links.map((link) => (
+            <NavLink key={link.to} to={link.to} end={link.end}>
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+}

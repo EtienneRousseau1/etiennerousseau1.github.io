@@ -1,0 +1,126 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.header__brand {
+  color: var(--text);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.header__brand:hover {
+  color: var(--accent);
+}
+
+.header__nav {
+  display: none;
+  gap: var(--space-5);
+}
+
+.header__nav a {
+  position: relative;
+  padding-block: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.header__nav a:hover {
+  color: var(--text);
+}
+
+.header__nav a.active {
+  color: var(--text);
+}
+
+.header__nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--accent);
+}
+
+.header__toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: calc(var(--space-3) * -1);
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.header__bars {
+  display: grid;
+  gap: 5px;
+  width: 20px;
+}
+
+.header__bars span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--text);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.header__bars.is-open span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.header__bars.is-open span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.header__mobile {
+  position: fixed;
+  inset: var(--header-height) 0 0;
+  background-color: var(--bg);
+  overflow-y: auto;
+}
+
+.header__mobile-nav {
+  display: grid;
+  padding-block: var(--space-4);
+}
+
+.header__mobile-nav a {
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: var(--text-xl);
+  font-weight: 500;
+}
+
+.header__mobile-nav a.active {
+  color: var(--accent);
+}
+
+@media (min-width: 48rem) {
+  .header__nav {
+    display: flex;
+  }
+
+  .header__toggle,
+  .header__mobile {
+    display: none;
+  }
+}
