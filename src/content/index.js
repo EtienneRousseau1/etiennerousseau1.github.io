@@ -16,11 +16,11 @@ export const intro = {
 };
 
 export const about = {
-  title: "About myself",
   paragraphs: [
-    "Hi, I'm Etienne. I was born and raised in the Bay Area, and I've been writing code since high school — it started with building small websites for friends and grew into a genuine obsession with how systems fit together.",
-    "I studied computer science at UC Davis, where I spent most of my time on distributed systems and backend work. Along the way I interned at Pampa Technologies, HashiCorp, and Tesla, picking up Go, Python, and a real appreciation for infrastructure that quietly does its job.",
-    "Today I'm a software engineer at Tesla working on a Database-as-a-Service platform that provisions and manages thousands of databases across the company. Outside of work you'll find me with friends, in the gym, or with my dog.",
+    "I grew up in the Bay Area and started coding in high school, building websites for friends who needed one. I studied computer science at UC Davis and graduated in 2026.",
+    "I interned at Pampa Technologies, HashiCorp, and Tesla. Almost all of it was backend and infrastructure work, which is what I stuck with. Mostly Go and Python.",
+    "Now I'm at Tesla full time on a Database-as-a-Service platform. It provisions and manages databases across the company, and it turned a process that used to take days into one that takes minutes.",
+    "When I'm not working I'm usually with friends, at the gym, or walking my dog.",
   ],
 };
 
