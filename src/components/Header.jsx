@@ -12,6 +12,8 @@ const links = [
   { to: "/contact", label: "Contact" },
 ];
 
+const DESKTOP = "(min-width: 48rem)";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
@@ -31,57 +33,84 @@ export default function Header() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
+  // Widening past the breakpoint hides the panel in CSS. Without this the
+  // state stays open and the scroll lock below leaves the page unscrollable.
+  useEffect(() => {
+    if (!open) return;
+    const query = window.matchMedia(DESKTOP);
+    const onChange = (event) => {
+      if (event.matches) setOpen(false);
+    };
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, [open]);
+
   // Stop the page scrolling underneath the open overlay.
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previous;
     };
   }, [open]);
 
   return (
-    <header className="header">
-      <div className="container header__inner">
-        <Link className="header__brand" to="/">
-          {logotext}
-        </Link>
+    <>
+      <header className="header">
+        <div className="container header__inner">
+          <Link className="header__brand" to="/">
+            {logotext}
+          </Link>
 
-        <nav className="header__nav" aria-label="Main">
+          <nav className="header__nav" aria-label="Main">
+            {links.map((link) => (
+              <NavLink key={link.to} to={link.to} end={link.end}>
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <button
+            type="button"
+            className="header__toggle"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span
+              className={`header__bars ${open ? "is-open" : ""}`}
+              aria-hidden="true"
+            >
+              <span />
+              <span />
+            </span>
+          </button>
+        </div>
+      </header>
+
+      {/*
+        Rendered outside <header> on purpose. The header's backdrop-filter
+        makes it the containing block for position: fixed descendants, which
+        collapsed this panel to the header's own height.
+      */}
+      <div id="mobile-nav" className="mobile-nav" hidden={!open}>
+        <nav className="container mobile-nav__list" aria-label="Mobile">
           {links.map((link) => (
-            <NavLink key={link.to} to={link.to} end={link.end}>
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              // Tapping the page you are already on does not change the
+              // pathname, so the effect above never fires.
+              onClick={() => setOpen(false)}
+            >
               {link.label}
             </NavLink>
           ))}
         </nav>
-
-        <button
-          type="button"
-          className="header__toggle"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className={`header__bars ${open ? "is-open" : ""}`} aria-hidden="true">
-            <span />
-            <span />
-          </span>
-        </button>
       </div>
-
-      <div
-        id="mobile-nav"
-        className={`header__mobile ${open ? "is-open" : ""}`}
-        hidden={!open}
-      >
-        <nav className="container header__mobile-nav" aria-label="Mobile">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to} end={link.end}>
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
-      </div>
-    </header>
+    </>
   );
 }

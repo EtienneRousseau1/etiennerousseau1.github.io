@@ -90,19 +90,23 @@
   transform: translateY(-3.5px) rotate(-45deg);
 }
 
-.header__mobile {
+.mobile-nav {
+  /* Fixed to the viewport, and a sibling of .header so the header's
+     backdrop-filter does not become its containing block. */
   position: fixed;
   inset: var(--header-height) 0 0;
+  z-index: 40;
   background-color: var(--bg);
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
-.header__mobile-nav {
+.mobile-nav__list {
   display: grid;
   padding-block: var(--space-4);
 }
 
-.header__mobile-nav a {
+.mobile-nav__list a {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--border);
   color: var(--text);
@@ -110,7 +114,7 @@
   font-weight: 500;
 }
 
-.header__mobile-nav a.active {
+.mobile-nav__list a.active {
   color: var(--accent);
 }
 
@@ -120,7 +124,7 @@
   }
 
   .header__toggle,
-  .header__mobile {
+  .mobile-nav {
     display: none;
   }
 }
