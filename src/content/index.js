@@ -12,8 +12,7 @@ export const meta = {
 export const intro = {
   name: "Etienne Rousseau",
   tagline: "Software engineer at Tesla, building Database-as-a-Service.",
-  description:
-    "I work on infrastructure that makes databases easy to run at scale. UC Davis computer science graduate, based in the Bay Area.",
+  description: "Based in the Bay Area.",
 };
 
 export const about = {
