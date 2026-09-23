@@ -1,0 +1,127 @@
+.minefield {
+  max-width: 30rem;
+  margin-top: var(--space-7);
+}
+
+.minefield__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.minefield__sizes {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface-raised);
+}
+
+.minefield__size {
+  min-height: 36px;
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.minefield__size[aria-pressed="true"] {
+  background-color: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.minefield__status {
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.minefield__status--boom {
+  color: #dc2626;
+}
+
+.minefield__status--cleared {
+  color: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .minefield__status--boom {
+    color: #f87171;
+  }
+}
+
+.minefield__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid), 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  /* Square tiles that scale with the viewport, never below a 44px target. */
+  aspect-ratio: 1;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background-color: var(--surface-raised);
+  font-size: clamp(1.25rem, 6vw, 2rem);
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition),
+    transform var(--transition);
+}
+
+.tile:not(:disabled):hover {
+  border-color: var(--accent);
+  background-color: var(--accent-subtle);
+}
+
+.tile:not(:disabled):active {
+  transform: scale(0.96);
+}
+
+.tile:disabled {
+  cursor: default;
+}
+
+.tile--safe {
+  border-color: transparent;
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.tile--mine {
+  border-color: #dc2626;
+  background-color: color-mix(in srgb, #dc2626 12%, transparent);
+  animation: tile-pop 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tile--dimmed {
+  opacity: 0.4;
+}
+
+@keyframes tile-pop {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.minefield__count {
+  margin-top: var(--space-4);
+  color: var(--text-subtle);
+  font-size: var(--text-sm);
+}

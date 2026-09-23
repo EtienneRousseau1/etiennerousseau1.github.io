@@ -6,6 +6,8 @@ import { Work } from "../pages/work";
 import { Projects } from "../pages/projects";
 import { About } from "../pages/about";
 import { Contact } from "../pages/contact";
+import { Games } from "../pages/games";
+import { MinefieldPage } from "../pages/games/minefield";
 import { NotFound } from "../pages/notfound";
 
 export default function AppRoutes() {
@@ -15,6 +17,8 @@ export default function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<Work />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/games" element={<Games />} />
+        <Route path="/games/minefield" element={<MinefieldPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         {/* The old site linked here; keep the URL working. */}
