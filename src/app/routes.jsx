@@ -1,42 +1,26 @@
 import React from "react";
-import { Route, Routes} from "react-router-dom";
-import withRouter from "../hooks/withRouter"
+import { Route, Routes } from "react-router-dom";
+import Layout from "../components/Layout";
 import { Home } from "../pages/home";
-import { Portfolio } from "../pages/portfolio";
-import { ContactUs } from "../pages/contact";
+import { Work } from "../pages/work";
+import { Projects } from "../pages/projects";
 import { About } from "../pages/about";
-import { Socialicons } from "../icons";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { Contact } from "../pages/contact";
+import { NotFound } from "../pages/notfound";
 
-const AnimatedRoutes = withRouter(({ location }) => (
-  <TransitionGroup>
-    <CSSTransition
-      key={location.key}
-      timeout={{
-        enter: 400,
-        exit: 400,
-      }}
-      classNames="page"
-      unmountOnExit
-    >
-      <Routes location={location}>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/experience" element={<Portfolio />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </CSSTransition>
-  </TransitionGroup>
-));
-
-function AppRoutes() {
+export default function AppRoutes() {
   return (
-    <div className="s_c">
-      <AnimatedRoutes />
-      <Socialicons />
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* The old site linked here; keep the URL working. */}
+        <Route path="/experience" element={<Work />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default AppRoutes;
