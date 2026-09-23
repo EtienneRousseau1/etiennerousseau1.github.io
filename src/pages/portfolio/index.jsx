@@ -3,7 +3,7 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta, services, projects } from "../../content_option";
-import resumeFile from "../../images/EtienneRousseauFinalResume.pdf"
+
 export const Portfolio = () => {
   return (
     <HelmetProvider>
@@ -18,7 +18,7 @@ export const Portfolio = () => {
           <Col lg="8">
             <h1 className="display-4 mb-4"> Experience </h1>{" "}
             <hr className="t_border my-4 ml-0 text-left" />
-            <a href={resumeFile} target="_blank" className="ac_btn btn">
+            <a href="/resume.pdf" target="_blank" className="ac_btn btn">
               Resume
             </a>
           </Col>

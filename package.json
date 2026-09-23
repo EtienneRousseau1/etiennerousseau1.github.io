@@ -1,8 +1,9 @@
 {
-  "homepage": "http://etiennerousseau1.github.io",
+  "homepage": "https://etiennerousseau1.github.io",
   "name": "etienne-portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "bootstrap": "^5.2.3",
     "emailjs-com": "^3.2.0",
@@ -12,24 +13,17 @@
     "react-helmet-async": "^1.0.7",
     "react-icons": "^4.1.0",
     "react-router-dom": "^6.6.2",
-    "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.2",
-    "typewriter-effect": "^2.18.2",
-    "web-vitals": "^3.1.1"
+    "typewriter-effect": "^2.18.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "vite",
+    "build": "vite build && node scripts/spa-fallback.js",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
   },
   "browserslist": {
     "production": [
@@ -42,8 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
   }
 }
