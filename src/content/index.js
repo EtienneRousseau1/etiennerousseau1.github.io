@@ -17,10 +17,9 @@ export const intro = {
 
 export const about = {
   paragraphs: [
-    "I grew up in the Bay Area and started coding in high school, building websites for friends who needed one. I studied computer science at UC Davis and graduated in 2026.",
-    "I interned at Pampa Technologies, HashiCorp, and Tesla. Almost all of it was backend and infrastructure work, which is what I stuck with. Mostly Go and Python.",
-    "Now I'm at Tesla full time on a Database-as-a-Service platform. It provisions and manages databases across the company, and it turned a process that used to take days into one that takes minutes.",
-    "When I'm not working I'm usually with friends, at the gym, or walking my dog.",
+    "I grew up in the Bay Area and started coding in high school, mostly making websites for friends. I studied computer science at UC Davis and finished in 2026.",
+    "I interned at Pampa Technologies and HashiCorp, then at Tesla, and I'm at Tesla full time now. I work on a Database-as-a-Service platform. Mostly Go and Python.",
+    "I spend most of my free time at the gym or with my dog.",
   ],
 };
 
@@ -69,7 +68,7 @@ export const skills = [
 export const contact = {
   email: "etienne.a.rousseau@gmail.com",
   description:
-    "I'm always happy to talk about infrastructure, side projects, or a role you think I'd be a fit for. Email is the fastest way to reach me.",
+    "Happy to talk about work, side projects, or anything you think I'd be a fit for. Email is the fastest way to reach me.",
 };
 
 export const socialprofils = {
