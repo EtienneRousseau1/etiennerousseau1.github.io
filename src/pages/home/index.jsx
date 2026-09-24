@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { FiArrowRight, FiExternalLink } from "react-icons/fi";
-import { intro, meta, resumeUrl, roles } from "../../content";
+import { FiArrowRight, FiDownload } from "react-icons/fi";
+import { intro, meta, resumeUrl, resumeFileName, roles } from "../../content";
 import portrait from "../../images/portrait.jpg";
 import "./home.css";
 
@@ -34,11 +34,10 @@ export const Home = () => {
           <a
             className="btn btn--secondary"
             href={resumeUrl}
-            target="_blank"
-            rel="noreferrer"
+            download={resumeFileName}
           >
             Resume
-            <FiExternalLink aria-hidden="true" />
+            <FiDownload aria-hidden="true" />
           </a>
         </div>
       </div>

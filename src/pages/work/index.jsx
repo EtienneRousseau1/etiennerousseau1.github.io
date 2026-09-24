@@ -1,7 +1,7 @@
 import React from "react";
-import { FiExternalLink } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 import PageHeader from "../../components/PageHeader";
-import { roles, resumeUrl } from "../../content";
+import { roles, resumeUrl, resumeFileName } from "../../content";
 import "./work.css";
 
 export const Work = () => (
@@ -14,11 +14,10 @@ export const Work = () => (
       <a
         className="btn btn--secondary work__resume"
         href={resumeUrl}
-        target="_blank"
-        rel="noreferrer"
+        download={resumeFileName}
       >
-        Resume
-        <FiExternalLink aria-hidden="true" />
+        Download resume
+        <FiDownload aria-hidden="true" />
       </a>
     </PageHeader>
 
