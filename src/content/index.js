@@ -77,3 +77,4 @@ export const socialprofils = {
 };
 
 export const resumeUrl = "/resume.pdf";
+export const resumeFileName = "Etienne-Rousseau-Resume.pdf";
