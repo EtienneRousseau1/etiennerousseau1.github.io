@@ -1,4 +1,5 @@
 import React from "react";
+import { FiExternalLink } from "react-icons/fi";
 import PageHeader from "../../components/PageHeader";
 import { roles, resumeUrl } from "../../content";
 import "./work.css";
@@ -8,7 +9,7 @@ export const Work = () => (
     <PageHeader
       title="Work"
       documentTitle="Work"
-      intro="Backend and infrastructure roles, most recent first."
+      intro="Where I've worked, most recent first."
     >
       <a
         className="btn btn--secondary work__resume"
@@ -16,7 +17,8 @@ export const Work = () => (
         target="_blank"
         rel="noreferrer"
       >
-        Download resume
+        Resume
+        <FiExternalLink aria-hidden="true" />
       </a>
     </PageHeader>
 
