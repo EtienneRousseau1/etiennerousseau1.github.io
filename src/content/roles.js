@@ -8,8 +8,11 @@ export const roles = [
     period: "July 2026 — Present",
     current: true,
     bullets: [
-      "Building Tesla's Database-as-a-Service platform, which provisions and manages 10,000+ on-prem databases and virtual machines.",
-      "Working across PostgreSQL, MongoDB, and Redis fleets to turn multi-day provisioning requests into self-service operations.",
+      "Shipped Tesla's Database-as-a-Service platform, which now runs the company's entire on-prem database fleet.",
+      "Automated in-place database upgrades and rolling restarts across every database engine with Temporal and Ansible, replacing a manual process. Replicas restart first with automatic writer failover.",
+      "Built and shipped DPCP's production AI operations agent in Go and gRPC, with 18 read-only tools exposed as an MCP server.",
+      "Turned the platform's metadata catalog into a multi-tenant service with per-org isolation and row-level permission filtering.",
+      "Built a unified debugging UI that merges activity logs, Temporal history, and Splunk into a single request timeline.",
     ],
   },
   {
