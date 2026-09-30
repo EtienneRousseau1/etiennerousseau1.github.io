@@ -12,16 +12,6 @@
   font-size: var(--text-lg);
 }
 
-.about__portrait {
-  width: 100%;
-  max-width: 17rem;
-  aspect-ratio: 1;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  object-fit: cover;
-  object-position: center 20%;
-}
-
 .about__section {
   margin-top: var(--space-8);
   padding-top: var(--space-6);
@@ -81,14 +71,37 @@
 }
 
 @media (min-width: 52rem) {
-  .about {
-    grid-template-columns: 1fr auto;
-    align-items: start;
-    gap: var(--space-8);
-  }
 
   .about__skills {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+.gallery__item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.gallery__item figcaption {
+  margin-top: var(--space-2);
+  color: var(--text-subtle);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 52rem) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
   }
 }
