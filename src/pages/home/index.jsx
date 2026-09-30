@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FiArrowRight, FiDownload } from "react-icons/fi";
 import { intro, meta, resumeUrl, resumeFileName, roles } from "../../content";
-import portrait from "../../images/portrait.jpg";
+import portrait from "../../images/rome-street.jpg";
 import "./home.css";
 
 export const Home = () => {
@@ -43,7 +43,7 @@ export const Home = () => {
       </div>
 
       <div className="hero__portrait">
-        <img src={portrait} alt="Etienne Rousseau" width="640" height="640" />
+        <img src={portrait} alt="Etienne leaning against a wall on a street in Rome" width="640" height="640" />
       </div>
     </div>
   );
