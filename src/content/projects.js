@@ -1,8 +1,24 @@
 export const projects = [
   {
+    name: "Statement Analyzer",
+    period: "April 2026 — September 2026",
+    tags: ["Next.js", "FastAPI", "Postgres", "Gemini"],
+    link: "https://statementanalyzer.vercel.app",
+    blurb:
+      "A personal finance app that turns bank and credit card statements into categorized, searchable transactions with budgets and dashboards.",
+    bullets: [
+      "Parses PDF and CSV statements with a Gemini-based pipeline and auto-categorizes every transaction into 11 spending categories.",
+      "Optimized parsing of long statements by splitting text into 30K-character chunks and skipping summary and balance sections.",
+      "Sanitizes extracted text against prompt injection before it reaches the model.",
+      "Integrated Plaid for live bank connections with transaction sync and duplicate-statement detection.",
+      "Secures every backend request with short-lived HMAC-signed tokens minted after Google OAuth sign-in.",
+    ],
+  },
+  {
     name: "FindMyLab",
-    period: "January 2026 — Present",
+    period: "January 2026 — June 2026",
     tags: ["Next.js", "Bun", "Postgres", "Docker"],
+    link: "https://findmylabdavis.org",
     blurb:
       "A platform helping 40,000+ UC Davis students find and reach out to research labs.",
     bullets: [
