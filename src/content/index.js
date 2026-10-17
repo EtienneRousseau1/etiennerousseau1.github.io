@@ -39,15 +39,7 @@ export const education = {
 export const skills = [
   {
     category: "Languages",
-    items: ["Python", "Go", "Java", "C/C++", "C#", "TypeScript"],
-  },
-  {
-    category: "Databases",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
-  },
-  {
-    category: "Frameworks",
-    items: ["FastAPI", "React", "Next.js", "Angular", "Flask", "Express", "Django"],
+    items: ["Python", "Go", "Java", "C/C++", "C#", "TypeScript", "JavaScript", "SQL", "HTML/CSS", "Bash"],
   },
   {
     category: "Tools",
@@ -56,12 +48,21 @@ export const skills = [
       "Kubernetes",
       "AWS",
       "Azure DevOps",
-      "Bun",
+      "Ansible",
       "Temporal",
       "gRPC",
       "Protobuf",
       "Prometheus",
+      "MCP",
     ],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+  },
+  {
+    category: "Frameworks",
+    items: ["FastAPI", "React", "Next.js", "Angular", "Flask", "Express", "Django", "Bun", "Swagger"],
   },
 ];
 
